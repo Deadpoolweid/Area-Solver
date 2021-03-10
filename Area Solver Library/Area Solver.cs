@@ -13,7 +13,7 @@ namespace Area_Solver_Library
         /// <returns>Площадь круга</returns>
         public double GetCircleArea(double r)
         {
-            return Math.PI * r*r / 2;
+            return Math.PI * r*r;
         }
 
         /// <summary>
@@ -30,13 +30,25 @@ namespace Area_Solver_Library
         }
 
         
+        /// <summary>
+        /// Вычисляет площадь фигуры
+        /// </summary>
+        /// <param name="values">Радиус круга или стороны треугольника</param>
+        /// <returns>Площадь фигуры</returns>
         public double GetArea(params double[] values)
         {
             if (values.Length == 1) return GetCircleArea(values[0]);
             if (values.Length == 3) return GetTriangleArea(values[0], values[1], values[2]);
-            throw new Exception("Передано неверное количество параметров.");
+            throw new Exception("Передано неверное количество аргументов.");
         }
 
+        /// <summary>
+        /// Проверяет, является ли треугольник прямоугольным
+        /// </summary>
+        /// <param name="a">Первая сторона</param>
+        /// <param name="b">Вторая сторона</param>
+        /// <param name="c">Третья сторона</param>
+        /// <returns>Является ли треугольник прямоугольным</returns>
         public bool IsTriangleRight(double a, double b, double c)
         {
             List<double> sides = new List<double>() {a, b, c};
