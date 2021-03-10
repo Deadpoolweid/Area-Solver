@@ -1,5 +1,5 @@
 using System;
-using Area_Solver_Library;
+using AreaSolverLibrary;
 using NUnit.Framework;
 
 namespace Area_Solver_Tests
